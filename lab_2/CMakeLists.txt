@@ -17,6 +17,7 @@ set(SOURCES
     src/game.cpp
     src/second_window.cpp
     src/dialog_window.cpp
+    src/ui/color.cpp
     src/ui/item.cpp
     src/ui/button.cpp
     src/ui/text.cpp
@@ -29,6 +30,7 @@ set(HEADERS
     src/game.h
     src/second_window.h
     src/dialog_window.h
+    src/ui/color.h
     src/ui/item.h
     src/ui/button.h
     src/ui/text.h

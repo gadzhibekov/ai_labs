@@ -3,11 +3,15 @@
 #ifndef ITEM_H
 #define ITEM_H
 
+#include "color.h"
+
 #include <QPushButton>
 #include <QWidget>
 
 #include <utility>
 #include <vector>
+
+struct Color;
 
 typedef std::pair<int, int> Coords;
 
@@ -25,6 +29,7 @@ struct Item : QPushButton
     void                set_index(int index);
 
     void                show_value();
+    void                set_color(Color color);
     void                click_slot();
     void                clear();
 

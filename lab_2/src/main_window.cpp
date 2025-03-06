@@ -1,5 +1,6 @@
 #include "main_window.h"
 #include "game.h"
+#include "ui/color.h"
 #include "log/log.h"
 
 #include <cmath>
@@ -92,7 +93,8 @@ void MainWindow::draw_path_on_map(PVector pair_vector)
                 result.push_back(map[i]->get_index());
             }
 
-            map[i]->clear();
+            // map[i]->clear();
+            map[i]->set_color(Color(255, 255, 255));
         }
     }
 
@@ -102,7 +104,12 @@ void MainWindow::draw_path_on_map(PVector pair_vector)
         {
             if (map[j]->get_index() == result[i])
             {
-                map[j]->show_value();
+                // map[j]->show_value();
+
+                if (map[j]->get_value() == 7) map[j]->set_color(Color(128, 0, 128));
+                if (map[j]->get_value() == 9) map[j]->set_color(Color(0, 0, 255));
+                if (map[j]->get_value() == 1) map[j]->set_color(Color(0, 255, 0));
+                if (map[j]->get_value() == 0) map[j]->set_color(Color(255, 0, 0));
             }
         }
     }
@@ -154,6 +161,11 @@ void MainWindow::show_initial_maze(IVVector maze, int size)
 
     for (int i = 0; i < flat_vector.size(); ++i)
     {
-        map[i]->set_value(flat_vector[i]);
+        // map[i]->set_value(flat_vector[i]);
+
+        if (flat_vector[i] == 7) map[i]->set_color(Color(128, 0, 128));
+        if (flat_vector[i] == 9) map[i]->set_color(Color(0, 0, 255));
+        if (flat_vector[i] == 1) map[i]->set_color(Color(0, 255, 0));
+        if (flat_vector[i] == 0) map[i]->set_color(Color(255, 0, 0));
     }
 }

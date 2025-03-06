@@ -1,6 +1,7 @@
 #include "dialog_window.h"
 #include "log/log.h"
 
+
 DialogWindow::DialogWindow()
 {
     this->setMinimumSize(200, 120);
@@ -9,7 +10,6 @@ DialogWindow::DialogWindow()
 
     maze_size_text_edit      = new TextEdit("0", this);
     ok                       = new Button([&](){click_ok_button();}, this, "OK");
-
 
     maze_size_text_edit->setGeometry(5, 5, 190, 50);
     ok->setGeometry(5, 60, 190, 50);
